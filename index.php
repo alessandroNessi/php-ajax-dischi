@@ -1,6 +1,6 @@
 <?php
     include __DIR__.("/data/data.php");
-    include __DIR__.("/components/header.php");
+    // include __DIR__.("/components/header.php");
     include __DIR__.("/components/card.php");
     // var_dump($database);
 ?>
@@ -14,7 +14,7 @@
     <title>Document</title>
 </head>
 <body>
-    <header></header>
+    <?php include __DIR__.("/components/header.php"); ?>
     <main>
         <div class="container">
             <?php 

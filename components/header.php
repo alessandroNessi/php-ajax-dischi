@@ -1,0 +1,3 @@
+<header>
+    <img src="https://png2.cleanpng.com/sh/fdb987b25544360cc0ccddf830309d3d/L0KzQYq3VsA5N6J0hJH0aYP2gLBuTfxwb5CyiAJ4dHnpiX73jCJ1aZNxfZ93ZYT6f8PyTfdzaaFtgdV8LYP3grbojflvb15yRdN1dHX1frL7igZmNZpzjtd8dH3ofsX6TgJ2fKVqhtRucnewd7F5hP9vNZpzjtd8dD24c7fqVfY3bWE7SqdvNz6zQ4O8UMA6OmI6TqI5NEO2R4W3UsUzNqFzf3==/kisspng-logo-spotify-portable-network-graphics-streaming-m-alternative-investments-ruttenberg-gordon-invest-5cfc5f6e0625f7.0325009215600433740252.png" alt="spotify logo">
+</header>
