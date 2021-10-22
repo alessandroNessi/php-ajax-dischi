@@ -11,8 +11,11 @@
             echo json_encode($genres);//ritorno l'array dei generi
         }
 
-        //se il genere esiste
-        if(in_array($_GET['genre'], $genres)){
+        //se il genere esiste ed è all
+        if($_GET['genre']=="All"){
+            echo json_encode($database);//restituisco tutto
+            //altrimenti controllo che sia presente nei generi, per evitare cicli troppo lunghi inutili sul database
+        }elseif(in_array($_GET['genre'], $genres)){
             $filteredAlbum=[];
             foreach($database as $album){
                 if($album['genre']==$_GET['genre']){
@@ -21,8 +24,5 @@
             }
             echo json_encode($filteredAlbum);//ritorno gli album filtrati per genere
         }
-        
-    }else{
-        echo json_encode($database);//diamo in 'ouput' la variabile $database importata dal file database.php codificata in JSON
     }
 ?>

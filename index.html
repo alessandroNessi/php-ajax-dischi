@@ -16,7 +16,7 @@
     </header>
     <main>
         <div id="app">
-            <select name="genreselect" id="genreselect">
+            <select @change="populateTable" v-model="genderSelected" name="genreselect" id="genreselect">
                 <option value="All">All</option>
                 <option v-for="(element, index) in genres" :value="element">{{element}}</option>
             </select>

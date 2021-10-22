@@ -4,16 +4,16 @@ var app = new Vue({
     data: {
         data:[],
         genres:[],
+        genderSelected:"All",
     },
     methods: {
         populateTable(){
             axios.get('http://localhost/php-ajax-dischi/data/API_sim.php', {
             params: {
-
+                genre: this.genderSelected
             }
             }).then((response) => {
                 this.data=response.data;
-                // console.log(this.data);
             }).catch((error) => {
                 console.log(error);
             });
@@ -29,7 +29,7 @@ var app = new Vue({
             }).catch((error) => {
                 console.log(error);
             });
-        }
+        },
     },
     created() {
         this.populateTable();
