@@ -1,6 +1,3 @@
-<?php
-    include __DIR__.("/data/database.php");
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,14 +16,12 @@
     </header>
     <main>
         <div id="app" class="container">
-            <?php foreach ($database as $data){ ?>
-                <div v-for((element, index) in data) class='card_container'><div class='card'>
-                    <a href='https://en.wikipedia.org/wiki/<?php echo $data['author']?>'><img src='<?php echo $data['poster']?>' alt='<?php echo $data['title']?>'></a>
-                    <h2 class='title'><?php echo $data['title']?></h2>
-                    <p class='subtitle'><?php echo $data['author']?></p>
-                    <p class='subtitle'><?php echo $data['year']?></p>
-                </div></div>
-            <?php } ?>
+            <div v-for="(element, index) in data" :key="index" class='card_container'><div class='card'>
+                <img :src="element.poster" :alt="element.title">
+                <h2 class='title'>{{element.title}}</h2>
+                <p class='subtitle'>{{element.author}}</p>
+                <p class='subtitle'>{{element.year}}</p>
+            </div></div>
         </div>
     </main>
     <img src="" alt="">
