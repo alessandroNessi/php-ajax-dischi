@@ -5,11 +5,23 @@
     header("Content-Type: application/json");//diamo un formato alla risposta in ouput
 
     if(!empty($_GET)){
-        if(!empty($_GET['genres']) && $_GET['genres']=="true"){
-            echo json_encode($genres);//diamo in 'ouput' la variabile $database importata dal file database.php codificata in JSON
-        }else{
-            echo json_encode("error, bad request");
+
+        //se ho una richiesta dei generi
+        if($_GET['genres']=="true"){
+            echo json_encode($genres);//ritorno l'array dei generi
         }
+
+        //se il genere esiste
+        if(in_array($_GET['genre'], $genres)){
+            $filteredAlbum=[];
+            foreach($database as $album){
+                if($album['genre']==$_GET['genre']){
+                    $filteredAlbum[]=$album;
+                }
+            }
+            echo json_encode($filteredAlbum);//ritorno gli album filtrati per genere
+        }
+        
     }else{
         echo json_encode($database);//diamo in 'ouput' la variabile $database importata dal file database.php codificata in JSON
     }

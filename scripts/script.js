@@ -3,6 +3,7 @@ var app = new Vue({
 
     data: {
         data:[],
+        genres:[],
     },
     methods: {
         populateTable(){
@@ -12,7 +13,19 @@ var app = new Vue({
             }
             }).then((response) => {
                 this.data=response.data;
-                console.log(this.data);
+                // console.log(this.data);
+            }).catch((error) => {
+                console.log(error);
+            });
+        },
+        populateGenres(){
+            axios.get('http://localhost/php-ajax-dischi/data/API_sim.php', {
+            params: {
+                "genres":"true",
+            }
+            }).then((response) => {
+                this.genres=response.data;
+                console.log(this.genres);
             }).catch((error) => {
                 console.log(error);
             });
@@ -20,5 +33,6 @@ var app = new Vue({
     },
     created() {
         this.populateTable();
+        this.populateGenres();
     }
 })

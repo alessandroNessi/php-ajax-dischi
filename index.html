@@ -15,18 +15,22 @@
         <img src="https://png2.cleanpng.com/sh/fdb987b25544360cc0ccddf830309d3d/L0KzQYq3VsA5N6J0hJH0aYP2gLBuTfxwb5CyiAJ4dHnpiX73jCJ1aZNxfZ93ZYT6f8PyTfdzaaFtgdV8LYP3grbojflvb15yRdN1dHX1frL7igZmNZpzjtd8dH3ofsX6TgJ2fKVqhtRucnewd7F5hP9vNZpzjtd8dD24c7fqVfY3bWE7SqdvNz6zQ4O8UMA6OmI6TqI5NEO2R4W3UsUzNqFzf3==/kisspng-logo-spotify-portable-network-graphics-streaming-m-alternative-investments-ruttenberg-gordon-invest-5cfc5f6e0625f7.0325009215600433740252.png" alt="spotify logo">
     </header>
     <main>
-        <div id="app" class="container">
+        <div id="app">
+            <select name="genreselect" id="genreselect">
+                <option value="All">All</option>
+                <option v-for="(element, index) in genres" :value="element">{{element}}</option>
+            </select>
+            <div class="container">
 
-            <!-- <select name="genreselect" id="genreselect">
-                <option v-for="(element, index) in " value=""></option>
-            </select> -->
-
-            <div v-for="(element, index) in data" :key="index" class='card_container'><div class='card'>
-                <img :src="element.poster" :alt="element.title">
-                <h2 class='title'>{{element.title}}</h2>
-                <p class='subtitle'>{{element.author}}</p>
-                <p class='subtitle'>{{element.year}}</p>
-            </div></div>
+                <div v-for="(element, index) in data" :key="index" class='card_container'>
+                    <div class='card'>
+                        <img :src="element.poster" :alt="element.title">
+                        <h2 class='title'>{{element.title}}</h2>
+                        <p class='subtitle'>{{element.author}}</p>
+                        <p class='subtitle'>{{element.year}}</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <img src="" alt="">
