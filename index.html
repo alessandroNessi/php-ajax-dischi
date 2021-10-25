@@ -17,11 +17,10 @@
     <main>
         <div id="app">
             <select @change="populateTable" v-model="genderSelected" name="genreselect" id="genreselect">
-                <option value="All">All</option>
+                <option selected value="All">All</option>
                 <option v-for="(element, index) in genres" :value="element">{{element}}</option>
             </select>
             <div class="container">
-
                 <div v-for="(element, index) in data" :key="index" class='card_container'>
                     <div class='card'>
                         <img :src="element.poster" :alt="element.title">
