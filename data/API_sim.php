@@ -14,7 +14,8 @@
         //se il genere esiste ed è all
         if($_GET['genre']=="All"){
             echo json_encode($database);//restituisco tutto
-            //altrimenti controllo che sia presente nei generi, per evitare cicli troppo lunghi inutili sul database
+            //altrimenti controllo che sia presente nei generi 
+            // per evitare cicli inutili sul database
         }elseif(in_array($_GET['genre'], $genres)){
             $filteredAlbum=[];
             foreach($database as $album){
